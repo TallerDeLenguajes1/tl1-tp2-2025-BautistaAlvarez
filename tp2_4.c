@@ -12,6 +12,8 @@ struct{
     "Pentium"};
     
     void listarPCs(compu pcs[], int cantidad);
+    void mostrarMasVieja(compu pcs[], int cantidad);
+
 
 int main(){
     srand(time(NULL));
@@ -30,6 +32,7 @@ int main(){
     }
 
     listarPCs(pc,numCompu);
+    mostrarMasVieja(pc,numCompu);
     
 
 
@@ -45,5 +48,23 @@ void listarPCs(compu pcs[], int cantidad){
         printf("Velocidad de procesamiento en GHz: %d\n", pcs[i].velocidad);
         printf("Tipo de procesador: %s\n", pcs[i].tipo_cpu);
     }
+    
+}
+
+void mostrarMasVieja(compu pcs[], int cantidad){
+    int laMasVieja = 2025, pcNum;
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (laMasVieja > pcs[i].anio)
+        {
+            laMasVieja = pcs[i].anio;
+            pcNum = i;
+        }
+    }
+    printf("La pc mas vieja es la Pc %d\n", pcNum + 1);
+    printf("Anio de fabricacion: %d\n", pcs[pcNum].anio);
+    printf("Cantidad de nucleos: %d\n", pcs[pcNum].cantidad_nucleos);
+    printf("Velocidad de procesamiento en GHz: %d\n", pcs[pcNum].velocidad);
+    printf("Tipo de procesador: %s\n", pcs[pcNum].tipo_cpu);
     
 }
