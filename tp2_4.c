@@ -13,6 +13,7 @@ struct{
     
     void listarPCs(compu pcs[], int cantidad);
     void mostrarMasVieja(compu pcs[], int cantidad);
+    void mostrarMasVeloz(compu pcs[], int cantidad);
 
 
 int main(){
@@ -33,6 +34,7 @@ int main(){
 
     listarPCs(pc,numCompu);
     mostrarMasVieja(pc,numCompu);
+    mostrarMasVeloz(pc,numCompu);
     
 
 
@@ -61,10 +63,26 @@ void mostrarMasVieja(compu pcs[], int cantidad){
             pcNum = i;
         }
     }
-    printf("La pc mas vieja es la Pc %d\n", pcNum + 1);
+    printf("---La pc mas vieja es la Pc %d---\n", pcNum + 1);
     printf("Anio de fabricacion: %d\n", pcs[pcNum].anio);
     printf("Cantidad de nucleos: %d\n", pcs[pcNum].cantidad_nucleos);
     printf("Velocidad de procesamiento en GHz: %d\n", pcs[pcNum].velocidad);
     printf("Tipo de procesador: %s\n", pcs[pcNum].tipo_cpu);
-    
+}
+
+void mostrarMasVeloz(compu pcs[], int cantidad){
+    int laMasRapida = 0, pcNum;
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (laMasRapida < pcs[i].velocidad)
+        {
+            laMasRapida = pcs[i].velocidad;
+            pcNum = i;
+        }
+    }
+    printf("+++La pc mas rapida es la Pc %d+++\n", pcNum + 1);
+    printf("Anio de fabricacion: %d\n", pcs[pcNum].anio);
+    printf("Cantidad de nucleos: %d\n", pcs[pcNum].cantidad_nucleos);
+    printf("Velocidad de procesamiento en GHz: %d\n", pcs[pcNum].velocidad);
+    printf("Tipo de procesador: %s\n", pcs[pcNum].tipo_cpu);
 }
