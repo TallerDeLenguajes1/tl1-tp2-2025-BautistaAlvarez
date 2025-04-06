@@ -1,2 +1,10 @@
 ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
-Agregar una respuestas elaborada
+No, debido a que cuando cambiás de rama en Git (git checkout main), Git actualiza el contenido de tu carpeta de trabajo (working directory)
+para que refleje exactamente el estado de esa rama en su último commit. Al hacer commit en la opcion 2, el archivo queda ahi, cuando paso a main Git cambia el contenido de la 
+carpeta de trabajo para que coincida con el último commit de main. Como en el último commit de main no existía nuevo.txt, Git lo borra del directorio de trabajo (pero no lo borra del todo, sigue en el historial de opcion2).
+
+¿Qué diferencias nota?
+La diferencia es que la rama main sigue avanzando mientras la opcion 2 sigue en el commit apartado del main
+
+¿Qué nota?
+Ahora al hacer un merge, las 2 ramas se combinan y se forman en una sola, siempre y cuando no colicionen entre ellas
