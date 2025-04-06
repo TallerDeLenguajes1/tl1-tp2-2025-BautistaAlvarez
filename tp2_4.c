@@ -15,7 +15,6 @@ struct{
     void mostrarMasVieja(compu pcs[], int cantidad);
     void mostrarMasVeloz(compu pcs[], int cantidad);
 
-
 int main(){
     srand(time(NULL));
 
@@ -36,8 +35,7 @@ int main(){
     mostrarMasVieja(pc,numCompu);
     mostrarMasVeloz(pc,numCompu);
     
-
-
+    free(pc); //libero el arreglo dinamico
     return 0;
 }
 
@@ -50,7 +48,6 @@ void listarPCs(compu pcs[], int cantidad){
         printf("Velocidad de procesamiento en GHz: %d\n", pcs[i].velocidad);
         printf("Tipo de procesador: %s\n", pcs[i].tipo_cpu);
     }
-    
 }
 
 void mostrarMasVieja(compu pcs[], int cantidad){
